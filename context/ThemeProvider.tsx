@@ -8,7 +8,7 @@ interface ThemeContextType {
 const ThemeContext = createContext<ThemeContextType | undefined>(undefined);
 
 const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [mode, setMode] = useState("");
+  const [mode, setMode] = useState();
   const handleThemeChange = () => {
     if (mode === "dark") {
       //   setMode("light");
@@ -19,7 +19,7 @@ const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     }
   };
   useEffect(() => {
-    // handleThemeChange();
+    handleThemeChange();
   }, [mode]);
 
   return (
